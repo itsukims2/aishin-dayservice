@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>愛心ダイアナデイサービスセンター｜施設について・求人情報</title>
+  <meta name="description" content="愛心ダイアナデイサービスの施設概要・ご利用対象・求人情報のご案内ページです。通所介護（デイサービス）として開設準備を進めています。">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#222;
+      --muted:#666;
+      --brand:#0a7a6f;
+      --brand-soft:#e6f4f2;
+      --line:#e1e5e4;
+      --radius:8px;
+      --shadow:0 4px 18px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+        "Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+      font-size:15px;
+      line-height:1.7;
+      color:var(--ink);
+      background:var(--bg);
+    }
+    a{color:var(--brand);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%;height:auto;display:block;}
+    .container{max-width:960px;margin:0 auto;padding:0 16px;}
+
+    /* ヘッダー */
+    header{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .header-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:10px 16px;
+      flex-wrap:wrap;
+    }
+    .site-title{
+      font-size:20px;
+      font-weight:700;
+      color:var(--brand);
+    }
+    .site-sub{
+      font-size:12px;
+      color:var(--muted);
+    }
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:10px;
+      padding:0;
+      margin:0;
+      flex-wrap:wrap;
+    }
+    nav a{
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+    }
+    nav a:hover{
+      background:var(--brand-soft);
+      text-decoration:none;
+    }
+
+    /* ヒーロー（テキスト＋画像） */
+    .hero{
+      background:linear-gradient(180deg,#e8f6f3 0,#ffffff 55%);
+      padding:28px 0 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .hero-inner{
+      max-width:960px;
+      margin:0 auto;
+      padding:0 16px;
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,0.9fr);
+      gap:18px;
+      align-items:center;
+    }
+    .hero h1{
+      font-size:24px;
+      margin:0 0 8px;
+    }
+    .hero-lead{
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 10px;
+    }
+    .hero-note{
+      font-size:13px;
+      color:var(--muted);
+      background:#fff;
+      border-radius:var(--radius);
+      padding:8px 10px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      max-width:640px;
+    }
+    .hero-image{
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .hero-image figure{margin:0;}
+    .hero-image img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+    .hero-image figcaption{
+      padding:6px 8px;
+    }
+
+    /* セクション */
+    main{padding:24px 0 32px;}
+    section{
+      padding:18px 0;
+      border-bottom:1px solid var(--line);
+    }
+    section:last-of-type{border-bottom:none;}
+    h2{
+      font-size:18px;
+      margin:0 0 10px;
+      border-left:4px solid var(--brand);
+      padding-left:8px;
+    }
+    h3{
+      font-size:16px;
+      margin:0 0 6px;
+    }
+    p{margin:0 0 8px;}
+    .small{font-size:13px;color:var(--muted);}
+    .list{margin:0;padding-left:18px;}
+    .list li{margin-bottom:4px;}
+
+    .box{
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      box-shadow:var(--shadow);
+      font-size:14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:16px;
+    }
+
+    /* 施設の概要テーブル */
+    .table-wrap{overflow-x:auto;margin-top:4px;}
+    table{
+      border-collapse:collapse;
+      width:100%;
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      font-size:14px;
+      overflow:hidden;
+    }
+    th,td{
+      padding:6px 8px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      width:30%;
+      background:#f7faf9;
+      font-weight:600;
+    }
+    tr:last-child th,tr:last-child td{border-bottom:none;}
+
+    /* 施設ギャラリー（画像の型） */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    .gallery-item{
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .gallery-item img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+    }
+    .gallery-item figcaption{
+      padding:4px 6px;
+    }
+
+    /* 求人情報 */
+    .badge-job{
+      display:inline-block;
+      padding:2px 8px;
+      font-size:11px;
+      border-radius:999px;
+      background:var(--brand-soft);
+      color:var(--brand);
+      margin-left:4px;
+    }
+    .job-list{margin:0;padding-left:18px;font-size:14px;}
+    .job-list li{margin-bottom:4px;}
+    .job-note{font-size:13px;color:var(--muted);margin-top:6px;}
+
+    .recruit-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,0.9fr);
+      gap:16px;
+    }
+    .recruit-photo{
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .recruit-photo img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .recruit-photo figcaption{
+      padding:4px 6px;
+    }
+
+    /* お問い合わせフォーム */
+    .contact-box{max-width:640px;}
+    .contact-list{
+      margin:0;
+      padding-left:18px;
+      font-size:14px;
+    }
+    .contact-list li{margin-bottom:4px;}
+    .contact-form{
+      margin-top:10px;
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      box-shadow:var(--shadow);
+      font-size:14px;
+    }
+    .form-row{margin-bottom:8px;}
+    label{display:block;font-size:13px;font-weight:600;margin-bottom:2px;}
+    input,textarea,select{
+      width:100%;
+      padding:6px 8px;
+      border-radius:6px;
+      border:1px solid var(--line);
+      font:inherit;
+    }
+    textarea{min-height:90px;resize:vertical;}
+    .req{color:#d11;margin-left:2px;}
+    .btn{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      border:none;
+      background:var(--brand);
+      color:#fff;
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .btn:hover{background:#075b52;}
+
+    /* フッター */
+    footer{
+      background:#0f1a18;
+      color:#dde7e3;
+      padding:14px 0 18px;
+      font-size:13px;
+    }
+    .footer-inner{
+      max-width:960px;
+      margin:0 auto;
+      padding:0 16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+    }
+    footer a{color:#c6f0e7;}
+    footer p{margin:2px 0;}
+
+    @media (max-width:768px){
+      .hero-inner{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr;}
+      .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .recruit-layout{grid-template-columns:1fr;}
+    }
+    @media (max-width:520px){
+      .gallery-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner container">
+    <div>
+      <div class="site-title">愛心ダイアナデイサービスセンター</div>
+      <div class="site-sub">通所介護（デイサービス）／開設準備中</div>
+    </div>
+    <nav aria-label="ページ内ナビ">
+      <ul>
+        <li><a href="#purpose">施設の目的</a></li>
+        <li><a href="#target">ご利用対象</a></li>
+        <li><a href="#outline">施設概要</a></li>
+        <li><a href="#gallery">施設ギャラリー</a></li>
+        <li><a href="#recruit">求人情報</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>施設について</h1>
+      <p class="hero-lead">
+        愛心ダイアナデイサービスセンターは、在宅で暮らす高齢者の方が、安心して日中を過ごしていただくための
+        通所介護施設として開設準備を進めています。
+      </p>
+      <p class="hero-note">
+        ※ 現在、指定申請・体制整備等の準備段階です。<br>
+        &nbsp;&nbsp;具体的な営業時間・サービス内容・料金等は、決まり次第こちらのページでお知らせいたします。
+      </p>
+    </div>
+    <!-- ★ヒーロー画像：フリー素材 or 実際のフロア写真など -->
+    <div class="hero-image">
+      <figure>
+        <!-- 例：/images/hero_dayroom.jpg に置く or フリー素材のURLを直接指定 -->
+        <img src="images/hero_exterior.jpeg" alt="明るい日差しが入るデイルームのイメージ写真">
+        <figcaption>イメージ写真：静かな場所で、ゆったり過ごせるデイホーム</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+
+  <section id="purpose">
+    <h2>施設の目的</h2>
+    <div class="box">
+      <p>
+        本施設は、介護保険制度に基づく通所介護（デイサービス）として、
+        ご自宅での生活を続けていくことが難しくならないよう、日中の見守りや機能訓練、交流の機会を提供することを目的としています。
+      </p>
+      <p>
+        ご利用者さまお一人おひとりの意思と尊厳を大切にし、その人らしい生活が続けられるよう、
+        心身の状態や生活環境に合わせた支援に努めます。
+      </p>
+      <p>
+        また、ご家族や地域の関係機関と連携し、在宅生活の継続と介護負担の軽減に寄与することを目指します。
+      </p>
+    </div>
+  </section>
+
+  <section id="target">
+    <h2>ご利用いただける方（予定）</h2>
+    <div class="grid-2">
+      <div class="box">
+        <h3>対象となる方</h3>
+        <ul class="list">
+          <li>要支援認定を受けておられる方</li>
+          <li>おおむね60歳以上の高齢者の方</li>
+          <li>医療的な管理が常時必要でない方（詳しくはご相談ください）</li>
+        </ul>
+        <p class="small">
+          ※ 正式な利用対象・受け入れ基準は、指定内容や体制により変更となる場合があります。<br>
+          ※ 詳細は、決定後にあらためて掲載いたします。
+        </p>
+      </div>
+      <div class="box">
+        <h3>想定している支援内容</h3>
+        <ul class="list">
+          <li>日中の見守り・生活支援</li>
+          <li>軽い運動・機能訓練（予定）</li>
+          <li>食事・水分補給の提供（予定）</li>
+          <li>入浴または清拭支援（予定）</li>
+          <li>レクリエーション・交流の場の提供（予定）</li>
+        </ul>
+        <p class="small">
+          ※ サービス内容の詳細・提供時間等は、準備が整い次第ご案内いたします。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="outline">
+    <h2>施設の概要</h2>
+    <p class="small">
+      ※ 以下の項目は、開設準備に応じて順次更新してまいります。現時点では仮の記載・未定の項目が含まれます。
+    </p>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr>
+            <th>名称</th>
+            <td>愛心ダイアナデイサービスセンター</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>〒360-0802 埼玉県熊谷市下奈良417-4</td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td>TEL：048-577-8724（開設準備窓口）</td>
+          </tr>
+          <tr>
+            <th>FAX</th>
+            <td>FAX：048-577-8725（未定の場合は適宜ご変更ください）</td>
+          </tr>
+          <tr>
+            <th>運営主体</th>
+            <td>社会福祉法人武蔵野ユートピアダイアナクラブ</td>
+          </tr>
+          <tr>
+            <th>開設予定日</th>
+            <td>2026年4月頃を予定（確定次第、正式な日付を掲載いたします）</td>
+          </tr>
+          <tr>
+            <th>事業所番号</th>
+            <td>介護保険事業所番号：取得手続き中（取得後に番号を掲載いたします）</td>
+          </tr>
+          <tr>
+            <th>定員</th>
+            <td>通所介護　1日あたり20名（予定）</td>
+          </tr>
+          <tr>
+            <th>建物構造等</th>
+            <td>
+              平屋建て／バリアフリー対応（予定）<br>
+              食堂・機能訓練スペース・静養室・相談室・トイレ・浴室　等
+            </td>
+          </tr>
+          <tr>
+            <th>協力医療機関</th>
+            <td>近隣クリニック・訪問看護ステーション等と連携予定</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ★施設ギャラリー：フリー素材＋将来は実際の写真を差し替え -->
+  <section id="gallery">
+    <h2>施設イメージ・ギャラリー</h2>
+    <p class="small">
+      現在はイメージ写真を掲載しています。開設後は、実際のフロアや設備の写真に差し替える予定です。
+    </p>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <!-- 例：images/gallery_dayroom.jpg -->
+        <img src="images/gallery_dayroom.jpeg" alt="広々としたデイルームのイメージ写真">
+        <figcaption>デイルーム（イメージ）</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- 例：images/gallery_bath.jpg -->
+        <img src="images/gallery_bath.jpeg" alt="手すりのある浴室のイメージ写真">
+        <figcaption>浴室設備（イメージ）</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <!-- 例：images/gallery_training.jpg -->
+        <img src="images/preparing.jpeg" alt="機能訓練スペースのイメージ写真">
+        <figcaption>機能訓練スペース（イメージ）</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ★求人情報セクション -->
+  <section id="recruit">
+    <h2>求人情報（開設準備スタッフ募集予定）</h2>
+    <div class="recruit-layout">
+      <div class="box">
+        <h3>募集の背景</h3>
+        <p>
+          愛心ダイアナデイサービスでは、開設に向けて一緒に立ち上げから関わっていただけるスタッフの募集を予定しています。
+          募集職種・条件などの詳細は、指定内容や体制が整い次第、当ページにてご案内いたします。
+        </p>
+
+        <h3>予定している募集職種</h3>
+        <ul class="job-list">
+          <li>管理者・生活相談員<span class="badge-job">正社員予定</span></li>
+          <li>介護職員（デイサービス）<span class="badge-job">正社員／パート予定</span></li>
+          <li>看護職員（正看護師・准看護師）<span class="badge-job">パート予定</span></li>
+          <li>送迎ドライバー<span class="badge-job">パート予定</span></li>
+        </ul>
+        <p class="job-note">
+          ※ 上記職種・雇用形態・勤務時間・給与等は、現時点での想定です。<br>
+          &nbsp;&nbsp;正式な募集要項が確定次第、求人ページやハローワーク等に公開いたします。
+        </p>
+
+        <h3>こんな方と一緒に働きたいと考えています</h3>
+        <ul class="list">
+          <li>ご利用者さま一人ひとりと、落ち着いて関わるケアを大切にしたい方</li>
+          <li>立ち上げ期の小さな事業所で、意見を出し合いながら形を作っていきたい方</li>
+          <li>介護・看護の経験を活かして、新しい環境でチャレンジしたい方</li>
+        </ul>
+
+        <p class="small">
+          募集開始前でも、「興味がある」「詳細が決まり次第、連絡がほしい」などのご相談は随時お受けいたします。
+          下記お問い合わせフォームまたはお電話にてご連絡ください。
+        </p>
+      </div>
+
+      <!-- ★スタッフ写真：実際の集合写真などに差し替え -->
+      <div class="recruit-photo">
+        <figure>
+          <!-- 例：images/staff_group.jpg -->
+          <img src="images/staff_group.jpg" alt="スタッフが笑顔で談笑しているイメージ写真">
+          <figcaption>イメージ写真：チームで連携しながらご利用者さまを支えます。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>開設・ご利用・求人に関するお問い合わせ</h2>
+    <div class="contact-box">
+      <p>
+        愛心ダイアナデイサービスセンターの開設に関するご質問、ご利用を検討されている方、
+        ケアマネジャー様、求人に関心をお持ちの方からのお問い合わせを受け付けています。
+      </p>
+      <ul class="contact-list">
+        <li>電話：<a href="tel:0485778724">048-577-8724</a>（開設準備窓口）</li>
+        <li>受付時間：平日 9:00～17:00（予定）</li>
+      </ul>
+      <p class="small">
+        ※ お急ぎのご相談はお電話にてお願いいたします。<br>
+        ※ メールでのお問い合わせは、以下のフォームから送信していただけます。
+      </p>
+
+      <div class="contact-form">
+        <!-- ★メール送信先だけ変えればそのまま使えます -->
+        <form action="mailto:info@example.jp" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label for="name">お名前<span class="req">※</span></label>
+            <input type="text" id="name" name="お名前" required>
+          </div>
+          <div class="form-row">
+            <label for="email">メールアドレス<span class="req">※</span></label>
+            <input type="email" id="email" name="メールアドレス" required>
+          </div>
+          <div class="form-row">
+            <label for="type">お問い合わせ区分</label>
+            <select id="type" name="お問い合わせ区分">
+              <option value="">選択してください</option>
+              <option value="ご利用の相談">ご利用の相談</option>
+              <option value="ケアマネジャーからの問い合わせ">ケアマネジャーからの問い合わせ</option>
+              <option value="求人について">求人について</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">お問い合わせ内容<span class="req">※</span></label>
+            <textarea id="message" name="お問い合わせ内容" required></textarea>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn">メールソフトを起動して送信</button>
+            <p class="small">
+              ※ 送信ボタンを押すと、お使いのメールソフトが立ち上がります。内容をご確認のうえ送信してください。
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p><strong>愛心ダイアナデイサービスセンター</strong></p>
+      <p>運営：社会福祉法人武蔵野ユートピア</p>
+    </div>
+    <div>
+      <p>〒360-0802 埼玉県熊谷市下奈良417-4</p>
+      <p>TEL：048-577-8724　／　E-mail：info@example.jp</p>
+      <p>© 2025 愛心ダイアナデイサービスセンター</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
